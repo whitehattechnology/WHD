@@ -2789,7 +2789,7 @@ body {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #000000;
+  background-color: #6c9cdf;
 }
 .cid-qWR0FrhcLd button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -5506,7 +5506,7 @@ body {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #000000;
+  background-color: #6c9cdf;
 }
 .cid-qWR0FrhcLd button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -5790,6 +5790,10 @@ body {
 .cid-qYgWEjyaN1 .media-container-row {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
+}
+.cid-qYgWEjyaN1 .mbr-text,
+.cid-qYgWEjyaN1 .mbr-section-btn {
+  text-align: left;
 }
 .cid-qYh86WO2R4 {
   padding-top: 30px;
