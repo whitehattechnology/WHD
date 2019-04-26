@@ -5598,7 +5598,7 @@ body {
 .cid-roHTnE0eAE {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: #4284df;
+  background-image: url("../../../assets/images/white-hat-logo-suite-twitter-header-2000x667.png");
 }
 .cid-roHTnE0eAE h2,
 .cid-roHTnE0eAE h3,
@@ -5638,7 +5638,7 @@ body {
   left: 0;
   right: 0;
   background: #2c1616;
-  opacity: 0.5;
+  opacity: 0.8;
   z-index: 0;
 }
 .cid-roHTnE0eAE .form-block .form-wrap {
