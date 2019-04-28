@@ -28,18 +28,18 @@
         "isScrollToTopButton": false
       },
       "additionalSetColors": [
+        "#ffe340",
         "#fed800",
         "#ffe342",
         "#e2d326",
         "#d1c21d",
         "#f9f9f9",
-        "#d6173f",
-        "#073b4c"
+        "#d6173f"
       ]
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.7.2",
-    "uniqCompNum": 227,
+    "uniqCompNum": 234,
     "versionPublish": "4.9.7",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/white-hat-logo-suite-avatar-1-128x128-1.png",
@@ -5464,121 +5464,131 @@
         {
           "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
+            ".column-content": {
+              "padding-top": "(@paddingTop * 20px)",
+              "padding-bottom": "(@paddingBottom * 15px)",
+              "background-color": "@bg2",
+              "width": "100%",
+              "float": "right",
+              "position": "relative"
             },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            "h2, h3, h4, p": {
-              "color": "#ffffff"
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".text-content .btn-bgr": {
+              "z-index": "0"
             },
             ".mbr-overlay": {
-              "z-index": "-1"
+              "background": "linear-gradient(@overlayColor -10%, @overlayColor2 75%)"
             },
-            ".mbr-iconfont": {
-              "font-size": "48px",
-              "padding-right": "1rem"
+            ".container-full-width": {
+              "position": "relative"
             },
-            ".form-control": {
-              "margin-bottom": "15px",
-              "padding": "1.07em 1.07em"
+            ".text-content": {
+              "width": "100%",
+              "padding": "0 30px",
+              "margin": "0 auto"
             },
-            ".subtext": {
-              "border-top": "1px solid rgba(0, 0, 0, 0.5)"
-            },
-            ".media-container-row": {
-              "-webkit-align-items": "center",
-              "align-items": "center"
-            },
-            ".mbr-text": {
-              "color": "#767676"
-            },
-            ".form-block": {
-              "padding": "3rem",
-              "position": "relative",
-              ".bg": {
-                "position": "absolute",
-                "top": "0",
-                "bottom": "0",
-                "left": "0",
-                "right": "0",
-                "background": "@formBg",
-                "opacity": "@formOpacity",
-                "z-index": "0"
-              },
-              ".form-wrap": {
-                "position": "relative",
-                "z-index": "1"
+            ".layer": {
+              "display": "none",
+              "height": "101%",
+              "position": "absolute",
+              "right": "49.9%",
+              "top": "0",
+              "bottom": "0",
+              "path": {
+                "fill": "@bg2"
               }
             },
-            "a:not([href]):not([tabindex])": {
-              "color": "#fff",
-              "border-radius": "3px"
-            },
-            ".multi-horizontal": {
-              "flex-grow": "1",
-              "-webkit-flex-grow": "1",
-              "max-width": "100%"
-            },
-            ".input-group-btn": {
-              "display": "block",
-              "text-align": "center"
-            },
-            "textarea.form-control": {
-              "resize": "none"
-            },
-            "& when (@reverseContent)": {
-              ".media-container-row": {
-                "-webkit-flex-direction": "row-reverse",
-                "flex-direction": "row-reverse"
+            "@media (min-width: 576px)": {
+              ".text-content": {
+                "width": "540px"
+              },
+              ".column-content": {
+                "width": "100%"
+              },
+              ".layer": {
+                "display": "none"
               }
             },
             "@media (min-width: 768px)": {
-              ".container > .row > .col-md-6": {
-                "&:first-child": {
-                  "padding-right": "30px"
-                },
-                "&:last-child": {
-                  "padding-left": "30px"
-                }
+              ".text-content": {
+                "width": "720px"
               }
             },
-            "@media (max-width: 991px)": {
-              ".google-map": {
-                "padding-bottom": "2rem"
-              }
-            },
-            "@media (max-width: 767px)": {
-              "h2": {
-                "padding-top": "2rem"
-              }
-            },
-            "@media (max-width: 499px)": {
-              ".block-content": {
-                "padding": "0"
+            "@media (min-width: 992px)": {
+              ".text-content": {
+                "width": "480px",
+                "margin": "0"
               },
-              ".form-block": {
-                "padding": "1rem"
+              ".column-content": {
+                "width": "50%"
+              },
+              ".layer": {
+                "display": "block"
               }
             },
-            "DIV": {
-              "text-align": "center"
+            "@media (min-width: 1200px)": {
+              ".text-content": {
+                "width": "570px"
+              }
             },
-            "P": {
-              "text-align": "left"
+            "@media screen and (~'-ms-high-contrast: active'), (~'-ms-high-contrast: none')": {
+              ".container-full-width .layer": {
+                "right": "2.6rem",
+                "height": "33rem"
+              },
+              ".column-content": {
+                "height": "33rem"
+              }
             }
           },
-          "_name": "form2",
-          "_customHTML": "<section class=\"mbr-section form2\" group=\"Forms\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Form on Left/Right\" name=\"reverseContent\">\n        <input type=\"checkbox\" title=\"Show Form Title\" name=\"showFormTitle\" checked>\n        <input type=\"color\" title=\"Form BG Color\" name=\"formBg\" value=\"#2c1616\">\n        <input type=\"range\" title=\"Form BG Opacity\" name=\"formOpacity\" min=\"0\" max=\"1\" value=\"0.8\" step=\"0.1\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show SubText\" name=\"showSubText\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/white-hat-logo-suite-twitter-header-2000x667.png\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#4284df\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#0c57bf\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n   <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-md-6 col-lg-6 block-content\">\n                <div class=\"form-block\">\n                    <div class=\"bg\"></div>\n                    <div class=\"form-wrap\" mbr-form>\n                    <!---Formbuilder Form--->\n                        <form action=\"damianpreciado@whitehatdemocrats.com\" name=\"Mobirise Form\" method=\"POST\" class=\"mbr-form form-with-styler\">\n                            <div class=\"form-row\">\n                                <div hidden=\"hidden\" data-form-alert class=\"alert alert-success col-12\">Thanks for filling out the form!</div>\n                                <div hidden=\"hidden\" data-form-alert-danger class=\"alert alert-danger col-12\"></div>\n                            </div>\n                            <div class=\"dragArea form-row\">\n                                <div class=\"col-md-12\">\n                                    <h4 mbr-theme-style=\"display-5\" class=\"mbr-fonts-style mb-4 mbr-fonts-style\">Sign up for email updates and download paper.<br><br>\n<div>\n</div><div><b>Arizona's Empowerment Scholarship Accounts</b></div></h4>\n                                </div>\n                                <div class=\"col-md-12 form-group \" data-for=\"name\">\n                                    <input type=\"text\" name=\"name\" placeholder=\"Your Name\" data-form-field=\"Name\" mbr-theme-style=\"display-7\" required=\"required\" class=\"form-control input\">\n                                </div>\n                                <div data-for=\"email\" class=\"col-md-12 form-group \">\n                                    <input type=\"text\" name=\"email\" placeholder=\"Email\" data-form-field=\"Email\" mbr-theme-style=\"display-7\" class=\"form-control input\" required=\"required\">\n                                </div>\n                                <div class=\"col-md-12 form-group \" data-for=\"message\" hidden=\"hidden\">\n                                    <textarea type=\"textarea\" name=\"message\" placeholder=\"Message\" data-form-field=\"Message\" mbr-theme-style=\"display-7\" class=\"form-control input\" hidden=\"hidden\"></textarea>\n                                </div>\n                                <div mbr-buttons=\"true\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove,-mbrBtnLink,-mbrBtnAdd\" class=\"col-md-12 input-group-btn mt-2\"><a type=\"submit\" class=\"btn btn-form btn-bgr btn-secondary\" data-app-placeholder=\"Type Text\">SUBMIT &amp; DOWNLOAD</a></div>\n                            </div>\n                        </form><!---Formbuilder Form--->\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-6 col-lg-6\">\n                <div class=\"text-block\">\n                    <h2 class=\"mb-4 mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title, .mbr-section-btn\">Read our <b>first paper!\n</b></h2>\n                    <h3 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                        Whatever types of questions you'll have, feel free to get in touch with us!\n                    </h3>\n                    <p class=\"mb-4 form-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".form-text\">Click any text to edit or style it. Select text to insert a link. Click blue \"Gear\" icon in the top right corner to hide/show buttons, text, title and change the block background. Click red \"+\" in the bottom right corner to add a new block. Use the top left menu to create new pages, sites and add themes.</p>\n                    <div class=\"mbr-section-btn mb-5\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n                        <a class=\"btn btn-md btn-white-outline btn-bgr\" href=\"https://mobirise.com\">MORE</a>\n                    </div>\n                </div>\n                <p class=\"mb-4 pt-5 mbr-fonts-style subtext\" mbr-theme-style=\"display-7\" mbr-if=\"showSubText\">At WHRPG we drive dialogue through data driven research policy and advocacy. We work to advocate by conducting policy research, educating voters, and informing legislators on our focus issues. These include Civic Engagement, Economic Development, Education, Criminal Justice, Human Services, as well as Technology &amp; Innovation. With your help we want to make our Arizona a better place. \n<br>\n<br>We hope that you find our first paper insightful and useful in the fight to protect our public schools.</p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "roHTnE0eAE",
-          "_anchor": "form2-6c",
+          "_name": "header5",
+          "_customHTML": "<section class=\"header5\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n         'mbr-fullscreen': fullScreen,\n         'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <!--<input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>-->\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <input type=\"color\" title=\"Background Color 2\" name=\"bg2\" value=\"#ffe340\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#4284df\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#d6173f\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"overlayColor2\" value=\"#00113e\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity}\">\n    </div>\n    <div class=\"container-full-width clearfix\">\n        <svg version=\"1.1\" class=\"layer\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" height=\"100%\" viewBox=\"0 0 97 604\" enable-background=\"new 0 0 97 604\" xml:space=\"preserve\">\n                    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" fill=\"#43D5CB\" d=\"M0,0c36,93.5,56,195.4,56,302c0,106.6-20,208.5-56,302 c22.8,0,97,0,97,0V0C97,0,32.5,0,0,0z\"></path>\n        </svg>\n        <div class=\"column-content\">\n            <div class=\"text-content\">\n                <h1 class=\"mbr-section-subtitle mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Read our <b>first paper!</b></h1>\n                <p class=\"mbr-text pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">At WHRPG we drive dialogue through data driven research policy and advocacy. We work to advocate by conducting policy research, educating voters, and informing legislators on our focus issues. These include Civic Engagement, Economic Development, Education, Criminal Justice, Human Services, as well as Technology &amp; Innovation. With your help we want to make our Arizona a better place. \n<br>\n<br>We hope that you find our first paper insightful and useful in the fight to protect our public schools.</p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn btn-md btn-secondary btn-bgr\" href=\"https://mobirise.com\">See Prıcıng</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "roYuJCxVrW",
+          "_anchor": "header5-6f",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor"
+          },
+          "_name": "content1",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 col-md-12\">\n                <h2 class=\"mbr-fonts-style block-title align-center\" data-app-selector=\".block-title\" mbr-theme-style=\"display-2\"></h2>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "roYwDZdRQP",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content1-6h"
+        },
+        {
+          "_customTemplate": true,
+          "_afterNavbarItem": false,
+          "_customHTML": "<!-- Begin Mailchimp Signup Form -->\n<link href=\"//cdn-images.mailchimp.com/embedcode/classic-10_7.css\" rel=\"stylesheet\" type=\"text/css\">\n<style type=\"text/css\">\n\t#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }\n\t/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.\n\t   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */\n</style>\n<div id=\"mc_embed_signup\">\n<form action=\"https://whrpg.us20.list-manage.com/subscribe/post?u=10740e4cf003a98da3866cbe1&amp;id=4875a65a7f\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate=\"\">\n    <div id=\"mc_embed_signup_scroll\">\n\t<h2>Subscribe</h2>\n<div class=\"indicates-required\"><span class=\"asterisk\">*</span> indicates required</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-EMAIL\">Email Address  <span class=\"asterisk\">*</span>\n</label>\n\t<input type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">\n</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-FNAME\">First Name </label>\n\t<input type=\"text\" value=\"\" name=\"FNAME\" class=\"\" id=\"mce-FNAME\">\n</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-LNAME\">Last Name  <span class=\"asterisk\">*</span>\n</label>\n\t<input type=\"text\" value=\"\" name=\"LNAME\" class=\"required\" id=\"mce-LNAME\">\n</div>\n\t<div id=\"mce-responses\" class=\"clear\">\n\t\t<div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>\n\t\t<div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>\n\t</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\n    <div style=\"position: absolute; left: -5000px;\" aria-hidden=\"true\"><input type=\"text\" name=\"b_10740e4cf003a98da3866cbe1_4875a65a7f\" tabindex=\"-1\" value=\"\"></div>\n    <div class=\"clear\"><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\n    </div>\n</form>\n</div>\n[JS_CODE_0][JS_CODE_1]\n<!--End mc_embed_signup-->",
+          "_customCSS": "/* Type valid CSS here */\n\ndiv {\n  padding-top: 25px;\n    padding: 10px 0;\n  color: #777;\n  text-align: center;\n}\np {\n  font-size: 60px;\n  color: #777;\n}",
+          "alias": "code-editor",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "pro.custom-html",
+          "_anchor": "custom-html-6c",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [
+            "<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>",
+            "<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>"
+          ]
         },
         {
           "_styles": {
