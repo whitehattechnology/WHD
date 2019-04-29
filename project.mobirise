@@ -28,18 +28,18 @@
         "isScrollToTopButton": false
       },
       "additionalSetColors": [
-        "#ffe340",
         "#fed800",
         "#ffe342",
         "#e2d326",
         "#d1c21d",
         "#f9f9f9",
-        "#d6173f"
+        "#d6173f",
+        "#073b4c"
       ]
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.7.2",
-    "uniqCompNum": 234,
+    "uniqCompNum": 226,
     "versionPublish": "4.9.7",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/white-hat-logo-suite-avatar-1-128x128-1.png",
